@@ -13,11 +13,26 @@ Pandas - continue
   * df['day'].values_counts()
   * df['day','sex'].values_counts()
   * df[['day','sex']].values_counts()
-* duplicated()= return the duplicate row
+* duplicated()= page 11-return for each value by column : if duplicated or not
+  * only after first instance, return the other duplicated=true
+  * df['size'].duplicated()
+  * ~df['size'].duplicated()=df['size'].unique()
+* drop_duplicated()=  page 11- remove all rows with duplicated values from the df
+  * inplace=optional
 * len(df)/len(df[label])= length total values/length of values in given label
 * sort_values(<by= optional>label/[label1,label2], ascending=boolean/[boolean1,boolean2])=sort values
 * replace(dictionary or fromValue=string/[fromValue1,fromValue2],toValue=string/[toValue1,toValue2]) (page 9/26)= works on column:
-  * df['sex'].replace('Female','F')
-  * df['sex'].replace(['Female','Male],['F','M'])
-  * or with dictionary:
-  ![img_1.png](img_1.png)
+  * 1 column:
+    * df['sex'].replace('Female','F')
+    * df['sex'].replace(['Female','Male],['F','M'])
+    * or with dictionary:
+    ![img_1.png](img_1.png)
+  * on many columns: df.replace(dictionary={'day':{'san':1,...},'sex':{...}})
+* map(dictionary)= like replace, receive dictionary with mapping on 1 column
+  * works only on 1 column 
+  * if there is no match for the fromValue, the toValue will be NaN
+  * if run value_counts() on map: return only of Not NaN values
+* nlargest(number of row,label,nsmallerst-page 12
+* samples(number of row,frac=in percentage)= return random rows-page 12:
+  * df.sample(5)= 5 rows randomly
+  * df.sample(frac=0.1) 10% of the rows randomly
