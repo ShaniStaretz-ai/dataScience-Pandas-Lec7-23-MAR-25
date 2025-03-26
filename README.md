@@ -17,6 +17,7 @@ Pandas - continue
   * only after first instance, return the other duplicated=true
   * df['size'].duplicated()
   * ~df['size'].duplicated()=df['size'].unique()
+  * optional parameter, keep=False - will return the first instance that was not duplicated in addition to the other its instances.
 * drop_duplicated()=  page 11- remove all rows with duplicated values from the df
   * inplace=optional
 * len(df)/len(df[label])= length total values/length of values in given label
